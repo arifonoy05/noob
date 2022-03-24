@@ -1,0 +1,464 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  margin: 0;
+  padding: 0;
+  display: block;
+  background-color: #f0f0f0;
+  color: #03254c;
+  font-family: 'Poppins', sans-serif;
+}
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+nav {
+  background: #03254c;
+  padding: 0 15px;
+}
+a {
+  color: #d0efff;
+  text-decoration: none;
+  transition: 0.4s;
+}
+.menu {
+  list-style-type: none;
+}
+.logo {
+  font-size: 20px;
+  padding: 7.5px 10px 7.5px 0;
+}
+.logo-font {
+  font-family: "Limelight", cursive;
+}
+.item {
+  padding: 10px;
+}
+.item.button {
+  padding: 9px 5px;
+}
+.item:not(.button) a:hover,
+.item a:hover::after {
+  color: #2a9df4;
+}
+/* Mobile menu */
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu li a {
+  display: block;
+  padding: 15px 5px;
+}
+.menu li.subitem a {
+  padding: 15px;
+}
+.toggle {
+  order: 1;
+  font-size: 20px;
+}
+.item.button {
+  order: 2;
+}
+.item {
+  order: 3;
+  width: 100%;
+  text-align: center;
+  display: none;
+}
+.active .item {
+  display: block;
+}
+
+.home,
+.contact-section,
+.bio-section,
+.achievements-section,
+.experience-section,
+.hobbies-section,
+.photography-section {
+  display: flex;
+  flex-direction: row;
+  font-size: 30px;
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.content {
+  padding: 10px 10%;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.main-content {
+  flex: 50%;
+  padding-left: 20px;
+}
+.main-content {
+  text-align: left;
+}
+.main-image {
+  flex: 50%;
+}
+.main-image img {
+  width: 100%;
+  position: sticky;
+  top: 15%;
+  transition: 0.4s;
+  filter: blur(1px);
+}
+.main-image img:hover {
+  filter: blur(0px);
+  transform: scale(1.05);
+}
+/*  */
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding: 30px 0px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 1200px;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mySlides {
+  display: none;
+}
+.mySlides img {
+  margin-top: -10px;
+  filter: blur(0px);
+}
+.mySlides img:hover {
+  transform: scale(1);
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.caption-container {
+  text-align: center;
+  background-color: black;
+  padding: 2px 16px;
+  color: white;
+}
+
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+img.hover-shadow {
+  transition: 0.3s;
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+/*  */
+
+.name {
+  margin: 0;
+  text-transform: capitalize;
+  margin-bottom: 1em;
+}
+.name span {
+  font-weight: normal;
+  text-transform: none;
+}
+.s_desc {
+  margin-bottom: 1em;
+}
+.s_desc h6 {
+  text-transform: capitalize;
+  margin: 0;
+}
+.s_desc p {
+  margin: 0;
+  font-size: 20px;
+}
+.c_goals {
+  margin-bottom: 1em;
+}
+.c_goals h6 {
+  margin: 0;
+  text-transform: capitalize;
+}
+.c_goals p {
+  margin: 0;
+  font-size: 20px;
+}
+.contact {
+  margin-bottom: 1em;
+}
+.contact h6 {
+  margin: 0;
+  text-transform: capitalize;
+}
+.contact p {
+  margin: 0;
+  font-size: 20px;
+}
+
+.s_icons {
+  margin-bottom: 1em;
+}
+.s_icons h6 {
+  margin: 0;
+  text-transform: capitalize;
+}
+.s_icons ul {
+  margin: 0;
+  padding: 0;
+  margin-top: 6px;
+}
+.s_icons ul li {
+  display: inline;
+  list-style-type: none;
+  margin-right: 12px;
+}
+.s_icons ul li .facebook {
+  transition: 0.4s;
+  color: #005694;
+}
+.s_icons ul li .instagram {
+  transition: 0.4s;
+  color: #fb3958;
+}
+.s_icons ul li a:hover {
+  opacity: 80%;
+}
+.main-content .contact p {
+  text-transform: capitalize;
+}
+.main-content .contact p a {
+  text-transform: none;
+  color: #03254c;
+}
+.main-content .contact p a:hover{
+  color: #005694;
+}
+.biography {
+  margin-bottom: 1em;
+}
+.biography h6 {
+  text-transform: capitalize;
+  margin: 0;
+}
+.biography p {
+  margin: 0;
+  font-size: 20px;
+}
+.b_img {
+  display: table;
+  clear: both;
+}
+.b_img img {
+  float: left;
+  /* width: 50%; */
+  padding: 0;
+  margin: 0;
+  transition: 0.4s;
+}
+.b_img img:hover{
+  transform: scale(1.1);
+}
+.achievements-section h6 {
+  margin: 0;
+  text-transform: capitalize;
+  margin-bottom: 1em;
+}
+.achievements h6 {
+  margin: 0;
+}
+.achievements ul {
+  padding-left: 20px;
+  list-style-type: square;
+}
+.achievements ul li {
+  font-size: 20px;
+}
+
+.experience-section .main-image img {
+  z-index: -1;
+}
+.experience-section h6 {
+  margin: 0;
+  text-transform: capitalize;
+  margin-bottom: 1em;
+}
+.experience {
+  margin-bottom: 1em;
+}
+.experience h6 {
+  margin: 0;
+}
+.experience ul {
+  padding-left: 20px;
+  list-style-type: square;
+}
+.experience ul li {
+  font-size: 20px;
+}
+.e_img {
+  display: table;
+  clear: both;
+}
+.e_img img {
+  float: left;
+  width: 50%;
+  padding: 0;
+  margin: 0;
+}
+
+.hobbies-section h6 {
+  margin-bottom: 1em;
+  text-transform: capitalize;
+}
+.hobbies {
+  margin-bottom: 1em;
+}
+.hobbies h6 {
+  margin: 0;
+}
+.hobbies p {
+  font-size: 20px;
+  margin-bottom: 0.5em;
+}
+.hobbies-section iframe {
+  width: 100%;
+  height: 300px;
+}
+
+.photography-section {
+  margin: 0;
+  padding: 0;
+}
+.photography-section h6{
+  text-align: left;
+  text-transform: capitalize;
+}
+form{
+  margin-bottom: 1em;
+}
+form input{
+  width: 100%;
+  margin-top:10px;
+  height: 35px;
+}
+form textarea{
+  width: 100%;
+  margin-top:10px;
+}
+.form-submit{
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid #03254c;
+  background-color: #005694;
+  color: #d0efff;
+  font-size: 20px;
+  transition: 0.4s;
+}
+.form-submit:hover{
+  background-color: transparent;
+  color: #03254c;
+}
+.photography-title{
+  padding: 10px 10%;
+}
+
+.gallery img{
+  width: 240px;
+  height: 180px;
+}
+footer{
+  background-color: #1167b1;
+  color: #d0efff;
+  padding: 30px 0px;
+}
+footer .content{
+  display: block;
+}
